@@ -7,9 +7,7 @@ import userAuthRoutes from "./routes/userAuthRoutes.js";
 import profileRoute from "./routes/profileRoute.js";
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-console.log(PORT);
+const PORT = process.env.PORT || 5000;
 
 //MIDDLEWARES
 app.use(express.json());

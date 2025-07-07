@@ -12,10 +12,12 @@ const auth = (req, res, next) => {
         .json({ message: "Access Denied: No token provided..." });
 
     jwt.verify(token, process.env.JWT_PRIVATE_KEY, (error, decoded) => {
-      if (error) return res.status(403).json({ message: "Invalid token..." });
+      if (error)
+        return res
+          .status(403)
+          .json({ message: "Invalid token, please try again..." });
 
       req.user = decoded;
-
       next();
     });
   } catch (error) {

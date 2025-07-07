@@ -3,8 +3,8 @@ export const profile = async (req, res) => {
     res.status(200).json({
       message: "Profile retrieved successful",
       user: {
-        name: req.userName,
-        email: req.userEmail,
+        name: req.user.userName,
+        email: req.user.userEmail,
       },
     });
   } catch (error) {
